@@ -53,8 +53,17 @@ class SortedList {
   }
 
   avg() {
-    let average = sum(this.items) / this.items.length;
-    return average;
+    let total = 0;
+    if (this.items.length == 0) {
+      return EmptySortedList;
+    } else {
+      for (let i = 0; i < this.items.length; i++) {
+        total = this.items[i] + total;
+      }
+      let average = total / this.items.length;
+
+      return average;
+    }
   }
 }
 
